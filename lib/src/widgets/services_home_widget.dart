@@ -41,7 +41,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                               semanticContainer: true,
                               clipBehavior: Clip.antiAliasWithSaveLayer,
                               elevation: 5.0,
-                              child: Container(
+                              child: SizedBox(
                                   height: 72.3,
                                   child: ListTile(
                                     onTap: () async {
@@ -55,9 +55,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                     },
                                     title: Text(e.title, style: titleStyle),
                                     leading: SizedBox(
-                                        child: Image.asset(e.image),
-                                        height: 860,
-                                        width: 130.0),
+                                      child: Image.asset(e.image),
+                                    ),
                                   ))))
                           .toList()))
             ],

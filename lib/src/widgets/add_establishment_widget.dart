@@ -10,19 +10,17 @@ class AddEstablishmentWidget extends StatelessWidget {
   AddEstablishmentWidget({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          centerTitle: true,
-          title: const Text('Añadir Establecimiento'),
-        ),
-        body: SingleChildScrollView(
-          child: Container(
-            margin: const EdgeInsets.all(60.0),
-            child: Form(
-              key: keyForm,
-              child: formUser(),
-            ),
+    return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        title: const Text('Añadir Establecimiento'),
+      ),
+      body: SingleChildScrollView(
+        child: Container(
+          margin: const EdgeInsets.all(60.0),
+          child: Form(
+            key: keyForm,
+            child: formUser(),
           ),
         ),
       ),
@@ -97,17 +95,17 @@ class AddEstablishmentWidget extends StatelessWidget {
               decoration: ShapeDecoration(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30.0)),
-                gradient: LinearGradient(colors: [
+                gradient: const LinearGradient(colors: [
                   Color(0xFF0EDED2),
                   Color(0xFF03A0FE),
                 ], begin: Alignment.topLeft, end: Alignment.bottomRight),
               ),
-              child: Text("Guardar",
+              child: const Text("Guardar",
                   style: TextStyle(
                       color: Colors.white,
                       fontSize: 18,
                       fontWeight: FontWeight.w500)),
-              padding: EdgeInsets.only(top: 16, bottom: 16),
+              padding: const EdgeInsets.only(top: 16, bottom: 16),
             ))
       ],
     );

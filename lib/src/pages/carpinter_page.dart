@@ -21,7 +21,7 @@ class _EstablecimientoWidgetState extends State<EstablecimientoWidget> {
     super.initState();
     // ignore: avoid_print
     print("1. Inicio del widget");
-    _downloadMantenimientos();
+    _downloadEstablesimientos();
   }
 
   @override
@@ -47,7 +47,7 @@ class _EstablecimientoWidgetState extends State<EstablecimientoWidget> {
                 )
               : _listaMantenimientos!.isEmpty
                   ? const Center(
-                      child: Text("No hay mantenimientos registrados"))
+                      child: Text("No existen establecimientos registrados"))
                   : ListView(
                       children: _listaMantenimientos!
                           .map((e) => EstablecimientoCard(model: e))
@@ -58,7 +58,7 @@ class _EstablecimientoWidgetState extends State<EstablecimientoWidget> {
     );
   }
 
-  _downloadMantenimientos() async {
+  _downloadEstablesimientos() async {
     // ignore: avoid_print
     print("1.1 Invocación al servicio de mantenimiento");
     _listaMantenimientos = await _establecimientoService.getEstablishment();

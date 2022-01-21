@@ -1,4 +1,5 @@
 import 'package:fixhome_ready/src/models/establishment_model.dart';
+import 'package:fixhome_ready/src/theme/constant_values.dart';
 import 'package:flutter/material.dart';
 
 class EstablecimientoCard extends StatelessWidget {
@@ -7,13 +8,31 @@ class EstablecimientoCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final Url = model.imageUrl!;
+    print("3. Cambio de estado" + (model.imageUrl ?? ""));
     return Card(
-      elevation: 7.0,
-      child: ListTile(
-        title: Text(model.name ?? ""),
-        subtitle: Text(model.description ?? ""),
-        trailing: Text(model.quealification.toString()),
+      borderOnForeground: true,
+      shape: roundedRectangle12,
+      margin: const EdgeInsets.only(top: 12, left: 12, right: 12),
+      elevation: 5.0,
+      child: SingleChildScrollView(
+        child: ListTile(
+          title: Text(model.name ?? ""),
+          subtitle: Text(model.description ?? ""),
+          trailing: Text(model.quealification.toString()),
+          leading: ConstrainedBox(
+            constraints: BoxConstraints(
+              minWidth: 100,
+              minHeight: 260,
+              maxWidth: 104,
+              maxHeight: 264,
+            ),
+            child: Image.network(Url, fit: BoxFit.fill),
+          ),
+        ),
       ),
     );
   }
 }
+
+//Text(model.imageURL ?? '').toString()

@@ -38,26 +38,8 @@ class AppTheme {
 
   static ThemeData themeData(bool lightMode) {
     return ThemeData(
-        primaryColor: const Color(0xFF1d87e5),
-        primaryColorDark: const Color(0xFF005bb2),
-        primaryColorLight: const Color(0xFF69b6ff),
-        tabBarTheme: TabBarTheme(
-            unselectedLabelColor: Colors.grey,
-            labelColor: lightMode ? const Color(0xFF283593) : Colors.white),
-        colorScheme: ColorScheme(
-            primary: const Color(0xFF283593),
-            primaryVariant: const Color(0xFF1d87e5),
-            secondary: const Color(0xFFffee58),
-            secondaryVariant: const Color(0xFFc9bc1f),
-            surface: Colors.white,
-            background: Colors.grey,
-            error: Colors.red,
-            onPrimary: Colors.white,
-            onSecondary: Colors.black,
-            onSurface: Colors.black,
-            onBackground: Colors.black,
-            onError: Colors.white,
-            brightness: lightMode ? Brightness.light : Brightness.dark),
+        primaryColor: const Color(0xFFFFFFFF),
+        brightness: lightMode ? Brightness.light : Brightness.dark,
         textTheme: _textTheme);
   }
 }
