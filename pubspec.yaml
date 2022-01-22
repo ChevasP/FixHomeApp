@@ -40,6 +40,8 @@ dependencies:
   flutter_screenutil: ^5.1.0
   flutter_holo_date_picker: ^1.0.1+2
   image_picker: ^0.8.4+4
+  provider: ^6.0.2
+  cloudinary_public: ^0.11.0
 
 dev_dependencies:
   flutter_test:

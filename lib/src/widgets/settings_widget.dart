@@ -1,5 +1,7 @@
+import 'package:fixhome_ready/src/providers/main_provider.dart';
 import 'package:fixhome_ready/src/theme/constant_values.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SettingsWidget extends StatefulWidget {
@@ -13,6 +15,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
   bool _switchValue = true;
   @override
   Widget build(BuildContext context) {
+    final mainProvider = Provider.of<MainProvider>(context, listen: true);
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
@@ -28,15 +31,12 @@ class _SettingsWidgetState extends State<SettingsWidget> {
             style: titleStyle,
           ),
           trailing: Switch(
-            value: _switchValue,
-            onChanged: (bool value) async {
-              final SharedPreferences prefs =
-                  await SharedPreferences.getInstance();
-              prefs.setBool("mode", value);
-              _switchValue = value;
-              setState(() {});
-            },
-          ),
+              value: mainProvider.mode,
+              onChanged: (bool value) async {
+                SharedPreferences prefs = await SharedPreferences.getInstance();
+                prefs.setBool("mode", value);
+                mainProvider.mode = value;
+              }),
         ),
       ),
     );

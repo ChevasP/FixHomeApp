@@ -33,6 +33,8 @@ List<ServiceMenu> servicios = [
 
 List<Widget> homeWidgets = [
   const HomePageWidget(),
-  AddEstablishmentWidget(),
+  const EstablishFormWidget(
+    idEstablishment: "",
+  ),
   const SettingsWidget()
 ];

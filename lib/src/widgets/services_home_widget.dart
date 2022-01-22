@@ -1,3 +1,4 @@
+import 'package:fixhome_ready/src/models/establishment_model.dart';
 import 'package:fixhome_ready/src/pages/carpinter_page.dart';
 import 'package:fixhome_ready/src/theme/constant_values.dart';
 import 'package:fixhome_ready/src/utils/main_menu.dart';
@@ -15,7 +16,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return SafeArea(
         child: Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
@@ -49,7 +50,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                         context,
                                         MaterialPageRoute(
                                           builder: (context) =>
-                                              EstablecimientoWidget(),
+                                              const EstablecimientoWidget(),
                                         ),
                                       );
                                     },

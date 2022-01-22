@@ -8,7 +8,9 @@ class EstablecimientoCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // ignore: non_constant_identifier_names
     final Url = model.imageUrl!;
+    // ignore: avoid_print
     print("3. Cambio de estado" + (model.imageUrl ?? ""));
     return Card(
       borderOnForeground: true,
@@ -21,7 +23,7 @@ class EstablecimientoCard extends StatelessWidget {
           subtitle: Text(model.description ?? ""),
           trailing: Text(model.quealification.toString()),
           leading: ConstrainedBox(
-            constraints: BoxConstraints(
+            constraints: const BoxConstraints(
               minWidth: 100,
               minHeight: 260,
               maxWidth: 104,
@@ -34,5 +36,3 @@ class EstablecimientoCard extends StatelessWidget {
     );
   }
 }
-
-//Text(model.imageURL ?? '').toString()

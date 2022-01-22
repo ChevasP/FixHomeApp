@@ -1,6 +1,7 @@
 import 'package:fixhome_ready/src/models/establishment_model.dart';
 import 'package:fixhome_ready/src/services/establish_service.dart';
 import 'package:fixhome_ready/src/theme/constant_values.dart';
+import 'package:fixhome_ready/src/widgets/add_establishment_widget.dart';
 import 'package:fixhome_ready/src/widgets/establishment_card.dart';
 import 'package:flutter/material.dart';
 
